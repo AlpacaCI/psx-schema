@@ -196,6 +196,10 @@ class Document
             $property->setDefault($data['default']);
         }
 
+        if (isset($data['example'])) {
+            $property->setExample($data['example']);
+        }
+
         $this->parseObjectType($property, $data, $depth);
         $this->parseArrayType($property, $data, $depth);
         $this->parseScalar($property, $data);

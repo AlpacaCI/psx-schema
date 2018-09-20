@@ -214,6 +214,11 @@ class PropertyType implements PropertyInterface
     protected $class;
 
     /**
+     * @var mixed
+     */
+    protected $example;
+
+    /**
      * @return string|array
      */
     public function getType()
@@ -960,6 +965,25 @@ class PropertyType implements PropertyInterface
     }
 
     /**
+     * @return mixed
+     */
+    public function getExample()
+    {
+        return $this->example;
+    }
+
+    /**
+     * @param mixed $example
+     * @return self
+     */
+    public function setExample($example)
+    {
+        $this->example = $example;
+
+        return $this;
+    }
+
+    /**
      * @return boolean
      */
     public function hasConstraints()
@@ -1064,6 +1088,7 @@ class PropertyType implements PropertyInterface
             'title' => $this->title,
             'description' => $this->description,
             'default' => $this->default,
+            'example' => $this->example,
             'allOf' => $this->allOf,
             'anyOf' => $this->anyOf,
             'oneOf' => $this->oneOf,
