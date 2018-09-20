@@ -450,6 +450,17 @@ interface PropertyInterface
     public function setClass($class);
 
     /**
+     * @return mixed
+     */
+    public function getExample();
+
+    /**
+     * @param mixed $example
+     * @return self
+     */
+    public function setExample($example);
+
+    /**
      * Returns whether a property has constraints. If no constraints are
      * available every data is allowed
      *
